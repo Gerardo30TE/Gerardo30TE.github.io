@@ -184,6 +184,8 @@
 
             <!-- Chart Start -->
             <div class="container-fluid pt-4 px-4">
+
+                <button class="btn btn-info" id="btn-Post">Post</button>
                 
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-5">
@@ -195,7 +197,7 @@
 
                     <div class="col-sm-12 col-xl-7">
                         <div class="bg-secondary rounded h-100 p-4">
-                            <iframe width="560" height="315" src="https://idp.gulfstream.com/nidp/idff/sso?id=GCAAG&sid=0&option=credential&sid=0&target=https%3A%2F%2Fmygulfstream.com%2F" title="Gulfstream" frameborder="0" allowfullscreen></iframe>
+                            <iframe id="my-iFrame-golfStream" width="560" height="315" src="https://idp.gulfstream.com/nidp/idff/sso?id=GCAAG&sid=0&option=credential&sid=0&target=https%3A%2F%2Fmygulfstream.com%2F" title="Gulfstream" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
 
@@ -274,3 +276,19 @@
 </body>
 
 </html>
+
+<script>
+
+    const myiFrame = document.getElementById('my-iFrame-golfStream');
+
+    $('#btn-Post').on('click', () => {
+        
+        const iframeWindow = myiFrame.contentWindow;
+        
+        console.log(iframeWindow)
+        console.log(iframeWindow.document);
+       
+
+    });
+
+</script>
